@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: space-between;
   padding-bottom: 1.5rem;
   border-bottom: 2px solid var(--gray-line);
-  font-size: 500;
+  font-weight: 500;
 
   span:first-child {
     font-size: 2rem;
