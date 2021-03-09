@@ -1,14 +1,29 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { useLoading } from '../hooks/useLoading';
 
 import { Container, BackgroundImage, Content } from '../styles/pages';
 
+interface UserData {
+  name: string;
+  username: string;
+  avatarUrl: string;
+  level: number;
+  currentExperience: number;
+  totalExperience: number;
+  challengesCompleted: number;
+}
+
 export default function Home(): JSX.Element {
   const { push } = useRouter();
+
+  const { isLoading } = useLoading();
 
   useEffect(() => {
     const url = window.location.href;
@@ -16,13 +31,18 @@ export default function Home(): JSX.Element {
     const hasCode = url.includes('?code=');
 
     if (hasCode) {
+      isLoading(true);
+
       const [, code] = url.split('?code=');
 
       axios.post('/api/login', { code }).then(response => {
-        console.log(response.data);
-      });
+        const gitUserdata = response.data as UserData;
 
-      push('/dashboard');
+        Cookies.defaults.expires = 1;
+        Cookies.set('userdata', JSON.stringify(gitUserdata));
+
+        push('/dashboard');
+      });
     }
   }, []);
 
@@ -35,7 +55,7 @@ export default function Home(): JSX.Element {
         <BackgroundImage />
 
         <Content>
-          <img src="/logo-white.svg" alt="Logo Move.on" />
+          <img src="/logo-white.svg" alt="Logo move.on" />
 
           <form>
             <strong>Bem-vindo</strong>
@@ -48,7 +68,12 @@ export default function Home(): JSX.Element {
             <Link
               href={`https://github.com/login/oauth/authorize?scope=user:email&client_id=${process.env.NEXT_PUBLIC_GITHUB_AUTH_CLIENT_ID}`}
             >
-              <button type="button">
+              <button
+                type="button"
+                onClick={() => {
+                  isLoading(true);
+                }}
+              >
                 <FaGithub size={35} style={{ color: 'var(--white)' }} />
                 Login com GitHub
               </button>
@@ -59,3 +84,20 @@ export default function Home(): JSX.Element {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const { userdata } = context.req.cookies;
+
+  if (userdata) {
+    return {
+      props: {},
+      redirect: {
+        destination: '/dashboard',
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
