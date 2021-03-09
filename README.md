@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  </br>
+  <img src="./public/logo-full.svg" />
+  </br>
+  </br>
+  Move.on
+</h1>
 
-## Getting Started
+<p align="center">A clone of the move.it app (app based on the pomodorus technique), developed by Rocketseat at NextLevelWeek 4</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<hr />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# View the app
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<h1 align="center">
+  <img width="250px" src="https://i.ibb.co/m55ZThg/Captura-de-Tela-19.png" />
+  <img width="250px" src="https://i.ibb.co/cFbB0ny/Captura-de-Tela-14.png" />
+  <img width="250px" src="https://i.ibb.co/GtQjGhG/Captura-de-Tela-15.png" />
+  <img width="250px" src="https://i.ibb.co/S6ShY5r/Captura-de-Tela-20.png" />
+  <img width="250px" src="https://i.ibb.co/RSpYtPQ/Captura-de-Tela-17.png" />
+  <img width="250px" src="https://i.ibb.co/KVS6nTw/Captura-de-Tela-18.png" />
+</h1>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<h1 align="center">
+  <img width="900px" src="https://s4.gifyu.com/images/c33e61be520047deb38084b2b13b0e7d01_39_19.gif" />
+</h1>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Getting started
 
-## Learn More
+1. Clone this repo using `git clone git@github.com:Laerthe-Souza/move-on.git`.
+2. Move yourself to the following directory `cd move-on`.
+3. Run `yarn` to install all dependencies.
+4. You will need create a database. Please, view this [video](https://www.youtube.com/watch?v=Cz55Jmhfw84&t=1624s) for guide you.
+5. To do login with github, you will need to configure the OAuth app on your github account. For this, see this [documentation](https://docs.github.com/pt/developers/apps/creating-an-oauth-app) for guide you.
+6. After completing the previous steps, create the `.env` file and adds the environment variables of the `.env.example` file.
+7. Run `yarn dev` to start the development server on `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
