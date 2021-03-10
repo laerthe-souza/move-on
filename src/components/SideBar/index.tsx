@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useCallback } from 'react';
 import { FiHome, FiAward, FiPower } from 'react-icons/fi';
 import { useLoading } from '../../hooks/useLoading';
+import { useSwitchTheme } from '../../hooks/useSwitchTheme';
 
 import { Container } from './styles';
 
@@ -12,6 +13,7 @@ interface SideBarProps {
 
 export default function SideBar({ page }: SideBarProps): JSX.Element {
   const { isLoading } = useLoading();
+  const { theme } = useSwitchTheme();
 
   const handleLogout = useCallback(() => {
     Cookies.remove('userdata');
@@ -24,7 +26,10 @@ export default function SideBar({ page }: SideBarProps): JSX.Element {
   return (
     <Container page={page}>
       <div>
-        <img src="/icons/logo-icon-light-mode.svg" alt="Logo move.on" />
+        <img
+          src={`/icons/logo-icon-${theme.mode}-mode.svg`}
+          alt="Logo move.on"
+        />
       </div>
 
       <div>
@@ -37,7 +42,11 @@ export default function SideBar({ page }: SideBarProps): JSX.Element {
           >
             <FiHome
               size={25}
-              color={page === 'dashboard' ? '#5965e0' : '#666666'}
+              style={
+                page === 'dashboard'
+                  ? { color: 'var(--blue)' }
+                  : { color: 'var(--text)' }
+              }
             />
           </button>
         </Link>
@@ -51,7 +60,11 @@ export default function SideBar({ page }: SideBarProps): JSX.Element {
           >
             <FiAward
               size={25}
-              color={page === 'leaderboard' ? '#5965e0' : '#666666'}
+              style={
+                page === 'leaderboard'
+                  ? { color: 'var(--blue)' }
+                  : { color: 'var(--text)' }
+              }
             />
           </button>
         </Link>

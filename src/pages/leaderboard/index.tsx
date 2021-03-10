@@ -49,9 +49,9 @@ export default function Leaderboard({ users }: LeaderboardProps): JSX.Element {
               <th>EXPERIÊNCIA</th>
             </tr>
           </thead>
-          {users.map((user, index) => (
-            <tbody key={user.username}>
-              <tr>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={user.username}>
                 <td>{index + 1}</td>
                 <td>
                   <Profile
@@ -67,8 +67,8 @@ export default function Leaderboard({ users }: LeaderboardProps): JSX.Element {
                   <strong>{user.totalExperience}</strong> xp
                 </td>
               </tr>
-            </tbody>
-          ))}
+            ))}
+          </tbody>
         </Ranking>
       </Container>
     </>
