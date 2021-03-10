@@ -12,7 +12,6 @@ export const Container = styled.div`
 export const BackgroundImage = styled.div`
   background: url('/icons/bg-icon-${props => props.theme.mode}-mode.svg')
     no-repeat center;
-  background-position: 50% 50%;
   background-size: contain;
   height: 100vh;
   flex: 1;

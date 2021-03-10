@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Overlay = styled.div`
-  background-color: rgba(242, 243, 245, 0.8);
+  background-color: ${props =>
+    props.theme.mode === 'light'
+      ? 'rgba(242, 243, 245, 0.8)'
+      : 'rgba(0, 0, 0, 0.7)'};
   position: fixed;
   top: 0;
   right: 0;
@@ -12,12 +15,14 @@ export const Overlay = styled.div`
   justify-content: center;
 
   div {
-    background-color: var(--white);
+    background-color: ${props =>
+      props.theme.mode === 'light' ? 'var(--white)' : '#111'};
     width: 100%;
     max-width: 40rem;
     padding: 1.5rem 2rem;
     border-radius: 5px;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    box-shadow: ${props =>
+      props.theme.mode === 'light' && '0 0 60px rgba(0, 0, 0, 0.5)'};
     text-align: center;
     position: relative;
 

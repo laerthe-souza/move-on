@@ -31,6 +31,8 @@ export default function SwitchThemeProvider({
   const [theme, setTheme] = useState<ThemeProps>({} as ThemeProps);
 
   const toggleSwitch = useCallback(() => {
+    Cookies.defaults.expires;
+
     if (theme.mode === 'light') {
       setTheme({ mode: 'dark' });
       Cookies.set('theme', 'dark');
