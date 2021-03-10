@@ -38,8 +38,10 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="pt-br">
         <Head>
+          <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />

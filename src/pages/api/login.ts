@@ -45,7 +45,9 @@ export default async (
 
   const db = await connectToDatabase(process.env.MONGODB_URI);
 
-  const collection = db.collection('users');
+  const collection = db.collection(
+    process.env.ENVIRONMENT === 'development' ? 'users_dev' : 'users',
+  );
 
   const userAlreadyExists = await collection.findOne({
     username: { $eq: githubUser.data.login },

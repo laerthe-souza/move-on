@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const BackgroundImage = styled.div`
-  background: url('/icons/background-icon.svg') no-repeat;
+  background: url('/icons/background-icon.svg') no-repeat center;
   background-position: 50% 50%;
   background-size: contain;
   height: 100vh;

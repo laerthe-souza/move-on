@@ -29,7 +29,9 @@ export default async (
 ): Promise<VercelResponse> => {
   const db = await connectToDatabase(process.env.MONGODB_URI);
 
-  const collection = db.collection('users');
+  const collection = db.collection(
+    process.env.ENVIRONMENT === 'development' ? 'users_dev' : 'users',
+  );
 
   const users = await collection
     .find({ name: { $exists: true } })

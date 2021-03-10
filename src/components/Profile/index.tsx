@@ -4,7 +4,7 @@ import { Container } from './styles';
 interface ProfileProps {
   name: string;
   avatarUrl: string;
-  level: number;
+  level?: number;
 }
 
 export default function Profile({

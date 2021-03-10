@@ -60,7 +60,6 @@ export default function Dashboard({ userdata }: DashboardProps): JSX.Element {
                 <Profile
                   name={userdata.name || userdata.username}
                   avatarUrl={userdata.avatarUrl}
-                  level={userdata.level}
                 />
 
                 <CompletedChallegnes />

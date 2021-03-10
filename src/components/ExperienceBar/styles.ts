@@ -26,14 +26,14 @@ export const Experience = styled.div<ExperienceProps>`
     height: 5px;
     border-radius: 5px;
     background-color: var(--green);
-    transition: width 0.8s;
+    transition: width 1.5s;
 
     span {
       top: 15px;
       position: absolute;
       left: ${props => props.progress}%;
       transform: translateX(-50%);
-      transition: left 0.8s;
+      transition: left 1.5s;
     }
   }
 `;
