@@ -5,11 +5,13 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--blue);
+  background-color: ${props =>
+    props.theme.mode === 'light' ? 'var(--blue)' : '#111'};
 `;
 
 export const BackgroundImage = styled.div`
-  background: url('/icons/background-icon.svg') no-repeat center;
+  background: url('/icons/bg-icon-${props => props.theme.mode}-mode.svg')
+    no-repeat center;
   background-position: 50% 50%;
   background-size: contain;
   height: 100vh;
@@ -33,7 +35,8 @@ export const Content = styled.main`
     strong {
       font-size: 3.6rem;
       font-weight: 600;
-      color: var(--white);
+      color: ${props =>
+        props.theme.mode === 'light' ? 'var(--white)' : '#fff'};
     }
 
     p {
@@ -43,7 +46,8 @@ export const Content = styled.main`
       font-size: 2rem;
       font-weight: 500;
       line-height: 1.6;
-      color: var(--text-highlight);
+      color: ${props =>
+        props.theme.mode === 'light' ? 'var(--text-highlight)' : '#fff'};
       margin: 4rem 0;
 
       svg {
@@ -62,10 +66,13 @@ export const Content = styled.main`
       justify-content: center;
       font-size: 1.8rem;
       font-weight: 600;
-      transition: background-color 0.4s;
+      transition: 0.4s;
 
       &:hover {
-        background-color: var(--green);
+        background-color: ${props =>
+          props.theme.mode === 'light' ? 'var(--green)' : '#000'};
+        color: ${props => props.theme.mode === 'dark' && '#fff'};
+        transition: 0.4s;
       }
 
       svg {

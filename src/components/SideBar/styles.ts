@@ -10,7 +10,8 @@ export const Container = styled.aside<ContainerProps>`
   left: 0;
   bottom: 0;
   background-color: var(--white);
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+  box-shadow: ${props =>
+    props.theme.mode === 'light' && '0 0 60px rgba(0, 0, 0, 0.2)'};
   width: 80px;
   display: flex;
   flex-direction: column;

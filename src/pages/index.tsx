@@ -9,6 +9,8 @@ import { FaGithub } from 'react-icons/fa';
 import { useLoading } from '../hooks/useLoading';
 
 import { Container, BackgroundImage, Content } from '../styles/pages';
+import SwitchTheme from '../components/SwitchTheme';
+import { useSwitchTheme } from '../hooks/useSwitchTheme';
 
 interface UserData {
   name: string;
@@ -24,6 +26,7 @@ export default function Home(): JSX.Element {
   const { push } = useRouter();
 
   const { isLoading } = useLoading();
+  const { theme } = useSwitchTheme();
 
   useEffect(() => {
     const url = window.location.href;
@@ -52,15 +55,24 @@ export default function Home(): JSX.Element {
         <title>Faça seu login | move.on</title>
       </Head>
       <Container>
+        <SwitchTheme />
+
         <BackgroundImage />
         <Content>
-          <img src="/logo-light-mode.svg" alt="Logo move.on" />
+          <img src={`/logo-${theme.mode}-mode.svg`} alt="Logo move.on" />
 
           <form>
             <strong>Bem-vindo</strong>
 
             <p>
-              <FaGithub size={45} style={{ color: 'var(--text-highlight)' }} />
+              <FaGithub
+                size={45}
+                style={
+                  theme.mode === 'light'
+                    ? { color: 'var(--text-highlight)' }
+                    : { color: '#fff' }
+                }
+              />
               Faça login com seu GitHub para começar
             </p>
 
@@ -73,7 +85,7 @@ export default function Home(): JSX.Element {
                   isLoading(true);
                 }}
               >
-                <FaGithub size={35} style={{ color: 'var(--white)' }} />
+                <FaGithub size={35} />
                 Login com GitHub
               </button>
             </Link>
