@@ -9,6 +9,7 @@ import { FaGithub } from 'react-icons/fa';
 import { useLoading } from '../hooks/useLoading';
 
 import { Container, BackgroundImage, Content } from '../styles/pages';
+import SwitchTheme from '../components/SwitchTheme';
 
 interface UserData {
   name: string;
@@ -52,6 +53,8 @@ export default function Home(): JSX.Element {
         <title>Faça seu login | move.on</title>
       </Head>
       <Container>
+        <SwitchTheme />
+
         <BackgroundImage />
 
         <Content>
