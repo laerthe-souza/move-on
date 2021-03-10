@@ -26,6 +26,7 @@ export default createGlobalStyle`
   body {
     background-color: var(--background);
     color: var(--text);
+    transition: all linear 0.4s;
   }
 
   body, input, textarea, button {

@@ -1,15 +1,17 @@
+import Cookies from 'js-cookie';
 import {
   createContext,
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useState,
 } from 'react';
 import { ThemeProvider } from 'styled-components';
 import SwitchTheme from '../components/SwitchTheme';
 
 interface ThemeProps {
-  mode: 'light' | 'dark';
+  mode: 'light' | 'dark' | string;
 }
 
 interface SwitchThemeContextData {
@@ -26,13 +28,27 @@ const SwitchThemeContext = createContext({} as SwitchThemeContextData);
 export default function SwitchThemeProvider({
   children,
 }: SwitchThemeProviderProps): JSX.Element {
-  const [theme, setTheme] = useState({} as ThemeProps);
+  const [theme, setTheme] = useState<ThemeProps>({} as ThemeProps);
 
   const toggleSwitch = useCallback(() => {
-    theme.mode === 'light'
-      ? setTheme({ mode: 'dark' })
-      : setTheme({ mode: 'light' });
+    if (theme.mode === 'light') {
+      setTheme({ mode: 'dark' });
+      Cookies.set('theme', 'dark');
+    } else {
+      setTheme({ mode: 'light' });
+      Cookies.set('theme', 'light');
+    }
   }, [theme]);
+
+  useEffect(() => {
+    const themeMode = Cookies.get('theme');
+
+    if (themeMode) {
+      setTheme({ mode: themeMode });
+    } else {
+      setTheme({ mode: 'light' });
+    }
+  }, []);
 
   return (
     <SwitchThemeContext.Provider value={{ theme, toggleSwitch }}>
