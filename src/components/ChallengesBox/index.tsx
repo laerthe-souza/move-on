@@ -1,4 +1,3 @@
-import challenges from '../../../challenges.json';
 import { useChallenges } from '../../hooks/useChallenges';
 import { useCountdown } from '../../hooks/useCountdown';
 
