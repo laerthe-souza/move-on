@@ -1,9 +1,9 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { GetServerSideProps } from 'next';
-import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/dist/client/router';
 import { useEffect } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { useLoading } from '../hooks/useLoading';
@@ -55,7 +55,7 @@ export default function Home(): JSX.Element {
         <BackgroundImage />
 
         <Content>
-          <img src="/logo-white.svg" alt="Logo move.on" />
+          <img src="/logo-light-mode.svg" alt="Logo move.on" />
 
           <form>
             <strong>Bem-vindo</strong>

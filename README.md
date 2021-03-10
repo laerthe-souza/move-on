@@ -3,7 +3,7 @@
   <img src="./public/logo-full.svg" />
   </br>
   </br>
-  Move.on
+  move.on
 </h1>
 
 <p align="center">A clone of the move.it app (app based on the Pomodorus Technique), developed by Rocketseat at NextLevelWeek 4</p>

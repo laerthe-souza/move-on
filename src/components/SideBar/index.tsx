@@ -24,7 +24,7 @@ export default function SideBar({ page }: SideBarProps): JSX.Element {
   return (
     <Container page={page}>
       <div>
-        <img src="/icons/logo-icon.svg" alt="Logo move.on" />
+        <img src="/icons/logo-icon-light-mode.svg" alt="Logo move.on" />
       </div>
 
       <div>
