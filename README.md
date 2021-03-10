@@ -1,6 +1,6 @@
 <h1 align="center">
   </br>
-  <img src="./public/logo-full.svg" />
+  <img src="./public/logo-dark-mode.svg" />
   </br>
   </br>
   move.on
