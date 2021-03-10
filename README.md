@@ -6,7 +6,7 @@
   Move.on
 </h1>
 
-<p align="center">A clone of the move.it app (app based on the pomodorus technique), developed by Rocketseat at NextLevelWeek 4</p>
+<p align="center">A clone of the move.it app (app based on the Pomodorus Technique), developed by Rocketseat at NextLevelWeek 4</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -36,11 +36,11 @@
 1. Clone this repo using `git clone git@github.com:Laerthe-Souza/move-on.git`.
 2. Move yourself to the following directory `cd move-on`.
 3. Run `yarn` to install all dependencies.
-4. You will need create a database. Please, view this [video](https://www.youtube.com/watch?v=Cz55Jmhfw84&t=1624s) for guide you.
-5. To do login with github, you will need to configure the OAuth app on your github account. For this, see this [documentation](https://docs.github.com/pt/developers/apps/creating-an-oauth-app) for guide you.
-6. After completing the previous steps, create the `.env.local` file and adds the environment variables of the `.env.example` file.
+4. You will need to create a database. Please, view this [video](https://www.youtube.com/watch?v=Cz55Jmhfw84&t=1624s) to guide you.
+5. To login with github, you will need to set up the OAuth app on your github account. For this, check this [documentation](https://docs.github.com/pt/developers/apps/creating-an-oauth-app) to guide you.
+6. After completing the previous steps, create the `.env.local` file and add the environment variables of the `.env.example` file.
 7. Run `yarn dev` to start the development server on `http://localhost:3000`
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
+This project is licensed under the MIT License - check the [LICENSE](https://opensource.org/licenses/MIT) page for details.
