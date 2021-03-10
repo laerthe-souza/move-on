@@ -53,7 +53,6 @@ export default function Home(): JSX.Element {
       </Head>
       <Container>
         <BackgroundImage />
-
         <Content>
           <img src="/logo-light-mode.svg" alt="Logo move.on" />
 
