@@ -11,7 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import SwitchTheme from '../components/SwitchTheme';
 
 interface ThemeProps {
-  mode: 'light' | 'dark' | string;
+  mode: 'light' | 'dark';
 }
 
 interface SwitchThemeContextData {
@@ -43,7 +43,7 @@ export default function SwitchThemeProvider({
   useEffect(() => {
     const themeMode = Cookies.get('theme');
 
-    if (themeMode) {
+    if (themeMode === 'dark') {
       setTheme({ mode: themeMode });
     } else {
       setTheme({ mode: 'light' });
