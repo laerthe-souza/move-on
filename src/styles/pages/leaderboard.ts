@@ -55,13 +55,16 @@ export const Ranking = styled.table`
     }
 
     td {
-      border-radius: 0 5px 5px 0;
       padding: 20px;
 
       &:first-child {
         border-radius: 5px 0 0 5px;
         border-right: 6px solid var(--background);
         text-align: center;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
       }
     }
   }

@@ -60,8 +60,9 @@ export const CountdownButton = styled.button<CountdownButtonProps>`
   justify-content: center;
   border: 0;
   border-radius: 5px;
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: ${props =>
+    props.theme.mode === 'light' ? 'var(--blue)' : '#000'};
+  color: ${props => (props.theme.mode === 'light' ? 'var(--white)' : '#fff')};
   font-size: 2rem;
   font-weight: 600;
   transition: background-color 0.4s;

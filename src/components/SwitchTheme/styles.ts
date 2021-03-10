@@ -10,8 +10,7 @@ export const Container = styled.div<ContainerProps>`
   right: 2.2%;
   width: 45px;
   height: 15px;
-  background-color: ${props =>
-    props.theme.mode === 'light' ? 'var(--white)' : '#000'};
+  background-color: var(--white);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -31,8 +30,7 @@ export const Container = styled.div<ContainerProps>`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: ${props =>
-      props.theme.mode === 'light' ? ' var(--blue-dark)' : ' var(--green)'};
+    background-color: var(--blue-dark);
     transition: transform 0.4s;
   }
 `;

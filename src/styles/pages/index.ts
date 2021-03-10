@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const BackgroundImage = styled.div`
-  background: url('/icons/bg-icon-${({ theme }) => theme.mode}-mode.svg')
+  background: url('/icons/bg-icon-${props => props.theme.mode}-mode.svg')
     no-repeat center;
   background-position: 50% 50%;
   background-size: contain;
@@ -35,7 +35,8 @@ export const Content = styled.main`
     strong {
       font-size: 3.6rem;
       font-weight: 600;
-      color: var(--white);
+      color: ${props =>
+        props.theme.mode === 'light' ? 'var(--white)' : '#fff'};
     }
 
     p {
@@ -57,32 +58,25 @@ export const Content = styled.main`
     button {
       height: 6rem;
       width: 100%;
-      background-color: ${props =>
-        props.theme.mode === 'light' ? 'var(--blue-dark)' : 'var(--green)'};
-      color: ${props =>
-        props.theme.mode === 'light' ? 'var(--white)' : '#000'};
+      background-color: var(--blue-dark);
+      color: var(--white);
       border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.8rem;
       font-weight: 600;
-      transition: background-color 0.4s;
+      transition: 0.4s;
 
       &:hover {
         background-color: ${props =>
           props.theme.mode === 'light' ? 'var(--green)' : '#000'};
-        color: #fff;
-
-        svg {
-          color: #fff;
-        }
+        color: ${props => props.theme.mode === 'dark' && '#fff'};
+        transition: 0.4s;
       }
 
       svg {
         margin-right: 2rem;
-        color: ${props =>
-          props.theme.mode === 'light' ? 'var(--white)' : '#000'};
       }
     }
   }

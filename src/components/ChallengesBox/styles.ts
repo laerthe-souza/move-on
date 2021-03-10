@@ -5,7 +5,8 @@ export const Container = styled.div`
   height: 100%;
   background-color: var(--white);
   border-radius: 5px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+  box-shadow: ${props =>
+    props.theme.mode === 'light' && '0 0 60px rgba(0, 0, 0, 0.2)'};
   padding: 2.5rem 3rem;
   display: flex;
   align-items: center;
@@ -120,11 +121,15 @@ export const ActiveChallengeBox = styled.div`
       border: 0;
       font-size: 1.5rem;
       font-weight: 600;
-      transition: background-color 0.4s;
+      transition: ${props =>
+          props.theme.mode === 'light' ? 'background-color' : 'color'}
+        0.4s;
 
       &.failedButton {
-        background-color: #fff5f5;
-        color: var(--red);
+        background-color: ${props =>
+          props.theme.mode === 'light' ? '#fff5f5' : 'var(--red)'};
+        color: ${props =>
+          props.theme.mode === 'light' ? 'var(--red)' : '#fff'};
         border-radius: 0 0 0 5px;
 
         &:hover {
@@ -134,8 +139,10 @@ export const ActiveChallengeBox = styled.div`
       }
 
       &.succeededButton {
-        background-color: #f7fff5;
-        color: var(--green);
+        background-color: ${props =>
+          props.theme.mode === 'light' ? '#f7fff5' : 'var(--green)'};
+        color: ${props =>
+          props.theme.mode === 'light' ? 'var(--green)' : '#fff'};
         border-left: 1px solid var(--gray-line);
         border-radius: 0 0 5px 0;
 
