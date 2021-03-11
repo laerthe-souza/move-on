@@ -18,18 +18,49 @@
 
 # View the app
 
-<h1 align="center">
-  <img width="250px" src="https://i.ibb.co/m55ZThg/Captura-de-Tela-19.png" />
-  <img width="250px" src="https://i.ibb.co/cFbB0ny/Captura-de-Tela-14.png" />
-  <img width="250px" src="https://i.ibb.co/GtQjGhG/Captura-de-Tela-15.png" />
-  <img width="250px" src="https://i.ibb.co/S6ShY5r/Captura-de-Tela-20.png" />
-  <img width="250px" src="https://i.ibb.co/RSpYtPQ/Captura-de-Tela-17.png" />
-  <img width="250px" src="https://i.ibb.co/KVS6nTw/Captura-de-Tela-18.png" />
-</h1>
+<details>
+  <summary>🌞 Light mode</summary>
 
-<h1 align="center">
-  <img width="900px" src="https://s4.gifyu.com/images/c33e61be520047deb38084b2b13b0e7d01_39_19.gif" />
-</h1>
+  <br>
+
+  <h1 align="center">
+    <img width="250px" src="https://i.ibb.co/MfRkw6s/Captura-de-Tela-28.png" />
+    <img width="250px" src="https://i.ibb.co/nzXgcRk/Captura-de-Tela-29.png" />
+    <img width="250px" src="https://i.ibb.co/zNr4pcy/Captura-de-Tela-30.png" />
+    <img width="250px" src="https://i.ibb.co/6rTv789/Captura-de-Tela-31.png" />
+    <img width="250px" src="https://i.ibb.co/pv9wwFY/Captura-de-Tela-32.png" />
+    <img width="250px" src="https://i.ibb.co/r7zb6qj/Captura-de-Tela-33.png" />
+  </h1>
+
+  <h1 align="center">
+    <img width="900px" src="https://s4.gifyu.com/images/c33e61be520047deb38084b2b13b0e7d01_39_19.gif" />
+  </h1>
+
+</details>
+
+  <br>
+
+  <details>
+  <summary>🌚 Dark mode</summary>
+
+  <br>
+
+  <h1 align="center">
+    <img width="250px" src="https://i.ibb.co/RSzkHMx/Captura-de-Tela-21.png" />
+    <img width="250px" src="https://i.ibb.co/2v1ghHz/Captura-de-Tela-22.png" />
+    <img width="250px" src="https://i.ibb.co/y0Y0hfk/Captura-de-Tela-24.png" />
+    <img width="250px" src="https://i.ibb.co/PQWzW4b/Captura-de-Tela-25.png" />
+    <img width="250px" src="https://i.ibb.co/ZBRwrSJ/Captura-de-Tela-26.png" />
+    <img width="250px" src="https://i.ibb.co/nDk93gw/Captura-de-Tela-27.png" />
+  </h1>
+
+  <h1 align="center">
+    <img width="900px" src="https://media.giphy.com/media/aaWEimr62DTF3iPsBS/giphy.gif" />
+  </h1>
+
+</details>
+
+<br>
 
 ## Getting started
 

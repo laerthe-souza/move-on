@@ -44,7 +44,7 @@ export default createGlobalStyle`
     background-color: ${props =>
       props.theme.mode === 'light' ? 'var(--background)' : '#111'};
     color: var(--text);
-    transition: all linear 0.4s;
+    transition: all linear 0.2s;
   }
 
   body, input, textarea, button {
