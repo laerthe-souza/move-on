@@ -53,16 +53,19 @@ export default class MyDocument extends Document {
             content="tecnica pomodoro, pomodoro, produtividade, programacao"
           />
 
-          <meta property="og:title" content="Técnica Pomodoro | move.on" />
+          <meta
+            property="og:title"
+            content="move.on | Tenha maior produtividade e foco nos seus projetos"
+          />
           <meta
             property="og:image"
             content="https://i.ibb.co/KzqcskR/Login.jpg"
           />
           <meta
             property="og:description"
-            content="Quer ter maior produtivide e foco? Venha conhecer o move.on"
+            content="Quer ter maior produtivide e foco? Venha conhecer o move.on."
           />
-          <meta property="og:url" content="//www.example.com/URL do artigo" />
+          <meta property="og:url" content="https://move-on-henna.vercel.app" />
 
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
