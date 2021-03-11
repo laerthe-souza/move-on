@@ -37,7 +37,6 @@ export default function CountdownProvider({
   const pauseCountdown = Number(process.env.NEXT_PUBLIC_PAUSE_COUNTDOWN);
 
   const [time, setTime] = useState(countdown);
-  const [cicles, setCicles] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
   const [isPause, setIsPause] = useState(false);
