@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   width: 100vw;
@@ -10,10 +10,14 @@ export const Container = styled.div`
 `;
 
 export const BackgroundImage = styled.div`
-  background: ${props =>
+  ${props =>
     props.theme.mode === 'light'
-      ? 'url("/icons/bg-icon-light-mode.svg") no-repeat center'
-      : 'url("/icons/bg-icon-dark-mode.svg") no-repeat center'};
+      ? css`
+          background: url('/icons/bg-icon-light-mode.svg') no-repeat center;
+        `
+      : css`
+          background: url('/icons/bg-icon-dark-mode.svg') no-repeat center;
+        `}
   background-size: contain;
   height: 100vh;
   flex: 1;
