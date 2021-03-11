@@ -9,7 +9,6 @@ import { FaGithub } from 'react-icons/fa';
 import { useLoading } from '../hooks/useLoading';
 
 import { Container, BackgroundImage, Content } from '../styles/pages';
-import SwitchTheme from '../components/SwitchTheme';
 import { useSwitchTheme } from '../hooks/useSwitchTheme';
 
 interface UserData {
@@ -55,11 +54,13 @@ export default function Home(): JSX.Element {
         <title>Faça seu login | move.on</title>
       </Head>
       <Container>
-        <SwitchTheme />
-
         <BackgroundImage />
         <Content>
-          <img src={`/logo-${theme.mode}-mode.svg`} alt="Logo move.on" />
+          {theme.mode === 'light' ? (
+            <img src="/logo-light-mode.svg" alt="Logo move.on" />
+          ) : (
+            <img src="/logo-dark-mode.svg" alt="Logo move.on" />
+          )}
 
           <form>
             <strong>Bem-vindo</strong>

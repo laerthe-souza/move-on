@@ -10,8 +10,10 @@ export const Container = styled.div`
 `;
 
 export const BackgroundImage = styled.div`
-  background: url('/icons/bg-icon-${props => props.theme.mode}-mode.svg')
-    no-repeat center;
+  background: ${props =>
+    props.theme.mode === 'light'
+      ? 'url("/icons/bg-icon-light-mode.svg") no-repeat center'
+      : 'url("/icons/bg-icon-dark-mode.svg") no-repeat center'};
   background-size: contain;
   height: 100vh;
   flex: 1;

@@ -26,10 +26,11 @@ export default function SideBar({ page }: SideBarProps): JSX.Element {
   return (
     <Container page={page}>
       <div>
-        <img
-          src={`/icons/logo-icon-${theme.mode}-mode.svg`}
-          alt="Logo move.on"
-        />
+        {theme.mode === 'light' ? (
+          <img src="/icons/logo-icon-light-mode.svg" alt="Logo move.on" />
+        ) : (
+          <img src="/icons/logo-icon-dark-mode.svg" alt="Logo move.on" />
+        )}
       </div>
 
       <div>

@@ -35,18 +35,18 @@ export default function SwitchThemeProvider({
 
     if (theme.mode === 'light') {
       setTheme({ mode: 'dark' });
-      Cookies.set('theme', 'dark');
+      Cookies.set('theme', { mode: 'dark' });
     } else {
       setTheme({ mode: 'light' });
-      Cookies.set('theme', 'light');
+      Cookies.set('theme', { mode: 'light' });
     }
   }, [theme]);
 
   useEffect(() => {
-    const themeMode = Cookies.get('theme');
+    const themeMode = Cookies.getJSON('theme');
 
-    if (themeMode === 'dark') {
-      setTheme({ mode: themeMode });
+    if (themeMode) {
+      setTheme(themeMode);
     } else {
       setTheme({ mode: 'light' });
     }
