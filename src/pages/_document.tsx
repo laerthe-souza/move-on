@@ -50,13 +50,14 @@ export default class MyDocument extends Document {
           />
           <meta
             name="keywords"
-            content="tecnica pomodoro, pomodoro, produtividade, programacao"
+            content="tecnica pomodoro, pomodoro, produtividade, foco, programacao"
           />
 
           <meta
             property="og:title"
             content="move.on | Tenha maior produtividade e foco nos seus projetos"
           />
+          <meta property="og:type" content="Web Application">
           <meta
             property="og:image"
             content="https://i.ibb.co/KzqcskR/Login.jpg"
