@@ -10,9 +10,11 @@ import { useChallenges } from './useChallenges';
 
 interface CountdownContextData {
   countdown: number;
+  pauseCountdown: number;
   minutes: number;
   seconds: number;
   isActive: boolean;
+  isPause: boolean;
   hasFinished: boolean;
   startCountdown(): void;
   resetCountdown(): void;
@@ -32,10 +34,12 @@ export default function CountdownProvider({
   const { startNewChallenge } = useChallenges();
 
   const countdown = Number(process.env.NEXT_PUBLIC_COUNTDOWN);
+  const pauseCountdown = Number(process.env.NEXT_PUBLIC_PAUSE_COUNTDOWN);
 
   const [time, setTime] = useState(countdown);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
+  const [isPause, setIsPause] = useState(false);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -47,6 +51,7 @@ export default function CountdownProvider({
   const resetCountdown = useCallback(() => {
     clearTimeout(countdownTimeout);
     setIsActive(false);
+    setIsPause(false);
     setTime(countdown);
     setHasFinished(false);
   }, [countdown]);
@@ -56,9 +61,15 @@ export default function CountdownProvider({
       countdownTimeout = setTimeout(() => {
         setTime(time - 1);
       }, 1000);
-    } else if (isActive && time === 0) {
-      setHasFinished(true);
+    } else if (isActive && !isPause && time === 0) {
       startNewChallenge();
+      setIsPause(true);
+      setIsActive(false);
+      setTime(pauseCountdown);
+    } else if (isActive && isPause && time === 0) {
+      setIsActive(false);
+      setHasFinished(true);
+      setIsPause(false);
     }
   }, [isActive, time]);
 
@@ -66,9 +77,11 @@ export default function CountdownProvider({
     <CountdownContext.Provider
       value={{
         countdown,
+        pauseCountdown,
         minutes,
         seconds,
         isActive,
+        isPause,
         hasFinished,
         startCountdown,
         resetCountdown,

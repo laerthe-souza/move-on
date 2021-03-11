@@ -14,10 +14,10 @@ export default function ChallengesBox(): JSX.Element {
     resetChallenge,
     completeChallenge,
   } = useChallenges();
-  const { isActive, resetCountdown } = useCountdown();
+  const { isActive, isPause, resetCountdown } = useCountdown();
 
   return (
-    <Container>
+    <Container isPause={isPause}>
       {activeChallenge ? (
         <ActiveChallengeBox>
           <header>Ganhe {activeChallenge.amount} de xp</header>
@@ -33,6 +33,7 @@ export default function ChallengesBox(): JSX.Element {
 
           <footer>
             <button
+              disabled={isPause}
               className="failedButton"
               type="button"
               onClick={() => {
@@ -44,6 +45,7 @@ export default function ChallengesBox(): JSX.Element {
             </button>
 
             <button
+              disabled={isPause}
               className="succeededButton"
               type="button"
               onClick={() => {

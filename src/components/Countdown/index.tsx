@@ -1,5 +1,6 @@
 import { FiX } from 'react-icons/fi';
 import { MdPlayArrow, MdCheckCircle } from 'react-icons/md';
+import { useChallenges } from '../../hooks/useChallenges';
 import { useCountdown } from '../../hooks/useCountdown';
 
 import { Container, CountdownButton, Timer } from './styles';
@@ -7,13 +8,16 @@ import { Container, CountdownButton, Timer } from './styles';
 export default function Countdown(): JSX.Element {
   const {
     countdown,
+    pauseCountdown,
     minutes,
     seconds,
     isActive,
+    isPause,
     hasFinished,
     startCountdown,
     resetCountdown,
   } = useCountdown();
+  const { resetChallenge } = useChallenges();
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
@@ -43,17 +47,20 @@ export default function Countdown(): JSX.Element {
         <>
           {!isActive ? (
             <CountdownButton type="button" onClick={startCountdown}>
-              Iniciar um ciclo
+              {isPause ? 'Iniciar pausa' : ' Iniciar um ciclo'}
               <MdPlayArrow size={25} color="#fff" />
             </CountdownButton>
           ) : (
             <CountdownButton
-              countdown={countdown}
+              countdown={isPause ? pauseCountdown : countdown}
               type="button"
-              onClick={resetCountdown}
+              onClick={() => {
+                resetCountdown();
+                resetChallenge();
+              }}
               className="active"
             >
-              Abandonar ciclo
+              {isPause ? 'Abandonar pausa' : 'Abandonar ciclo'}
               <FiX size={25} />
             </CountdownButton>
           )}

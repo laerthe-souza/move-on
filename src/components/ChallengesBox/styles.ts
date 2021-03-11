@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isPause: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   position: relative;
   height: 100%;
   background-color: var(--white);
@@ -12,6 +16,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  button {
+    cursor: ${props => props.isPause && 'not-allowed'};
+  }
 `;
 
 export const InactiveChallengeBox = styled.div`
@@ -132,7 +140,7 @@ export const ActiveChallengeBox = styled.div`
           props.theme.mode === 'light' ? 'var(--red)' : '#fff'};
         border-radius: 0 0 0 5px;
 
-        &:hover {
+        &:hover:not(:disabled) {
           background-color: var(--red);
           color: var(--white);
         }
@@ -146,7 +154,7 @@ export const ActiveChallengeBox = styled.div`
         border-left: 1px solid var(--gray-line);
         border-radius: 0 0 5px 0;
 
-        &:hover {
+        &:hover:not(:disabled) {
           background-color: var(--green);
           color: var(--white);
         }
