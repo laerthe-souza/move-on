@@ -35,10 +35,10 @@ export default function SwitchThemeProvider({
 
     if (theme.mode === 'light') {
       setTheme({ mode: 'dark' });
-      Cookies.set('theme', { mode: 'dark' });
+      Cookies.set('theme', JSON.stringify({ mode: 'dark' }));
     } else {
       setTheme({ mode: 'light' });
-      Cookies.set('theme', { mode: 'light' });
+      Cookies.set('theme', JSON.stringify({ mode: 'light' }));
     }
   }, [theme]);
 
