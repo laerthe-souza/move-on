@@ -21,8 +21,6 @@
 <details>
   <summary>🌞 Light mode</summary>
 
-  <br>
-
   <h1 align="center">
     <img width="250px" src="https://i.ibb.co/MfRkw6s/Captura-de-Tela-28.png" />
     <img width="250px" src="https://i.ibb.co/nzXgcRk/Captura-de-Tela-29.png" />
@@ -33,17 +31,13 @@
   </h1>
 
   <h1 align="center">
-    <img width="900px" src="https://s4.gifyu.com/images/c33e61be520047deb38084b2b13b0e7d01_39_19.gif" />
+    <img width="900px" src="https://s4.gifyu.com/images/ca7678143c58431ab831f715544e222d00_46_29.gif" />
   </h1>
 
 </details>
 
-  <br>
-
-  <details>
+<details>
   <summary>🌚 Dark mode</summary>
-
-  <br>
 
   <h1 align="center">
     <img width="250px" src="https://i.ibb.co/RSzkHMx/Captura-de-Tela-21.png" />
@@ -55,12 +49,10 @@
   </h1>
 
   <h1 align="center">
-    <img width="900px" src="https://media.giphy.com/media/aaWEimr62DTF3iPsBS/giphy.gif" />
+    <img width="900px" src="https://s4.gifyu.com/images/e9d742c5b9d242b0804cb4c5b55979e000_34_44.gif" />
   </h1>
 
 </details>
-
-<br>
 
 ## Getting started
 
