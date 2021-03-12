@@ -22,6 +22,7 @@ export default createGlobalStyle`
             --blue: #5965e0;
             --blue-dark: #4953b8;
             --blue-twitter: #2aa9e0;
+            --blue-twitter-light: #f5fcff;
           `
         : css`
             --white: #000;
@@ -34,7 +35,8 @@ export default createGlobalStyle`
             --green: #4cd62b;
             --blue: #4cd62b;
             --blue-dark: #4cd62b;
-            --blue-twitter: #2aa9e0;
+            --blue-twitter: #fff;
+            --blue-twitter-light: #2aa9e0;
           `}
 
     font-size: 60%;
