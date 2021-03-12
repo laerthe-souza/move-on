@@ -24,6 +24,7 @@
     "prettier"
   ],
   "rules": {
+    "react/jsx-no-target-blank": "off",
     "camelcase": "off",
     "react/require-default-props": "off",
     "no-new": "off",

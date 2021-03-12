@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Overlay = styled.div`
   background-color: ${props =>
@@ -43,7 +44,7 @@ export const Overlay = styled.div`
       font-size: 1.7rem;
       color: var(--text);
       margin-top: 0.75rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 8.5rem;
     }
 
     button:first-child {
@@ -53,6 +54,41 @@ export const Overlay = styled.div`
       background: 0;
       border: 0;
       font-size: 0;
+    }
+
+    a {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--blue-twitter-light);
+      border-top: 1px solid var(--gray-line);
+      color: var(--blue-twitter);
+      font-size: 1.8rem;
+      font-weight: 600;
+      transition: all 0.4s;
+
+      &:hover {
+        background-color: ${props =>
+          props.theme.mode === 'light'
+            ? 'var(--blue-twitter)'
+            : `${shade(0.2, '#2aa9e0')}`};
+        color: #fff;
+
+        svg {
+          color: #fff;
+        }
+      }
+
+      svg {
+        margin-left: 2rem;
+        color: var(--blue-twitter);
+        transition: color 0.4s;
+      }
     }
   }
 `;

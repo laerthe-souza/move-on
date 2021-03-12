@@ -53,9 +53,26 @@ export default class MyDocument extends Document {
             content="tecnica pomodoro, pomodoro, produtividade, foco, programacao"
           />
 
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Move.on | Tenha maior produtividade e foco nos seus projetos"
+          />
+          <meta
+            name="twitter:image"
+            content="https://moveonpomodoro.vercel.app/share-image.png"
+          />
+          <meta
+            name="twitter:image:src"
+            content="https://moveonpomodoro.vercel.app/share-image.png"
+          />
+          <meta name="twitter:image:alt" content="move.on" />
+          <meta name="twitter:image:width" content="1200" />
+          <meta name="twitter:image:height" content="630" />
+
           <meta
             property="og:title"
-            content="move.on | Tenha maior produtividade e foco nos seus projetos"
+            content="Move.on | Tenha maior produtividade e foco nos seus projetos"
           />
           <meta property="og:type" content="website" />
           <meta
