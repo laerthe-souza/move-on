@@ -60,7 +60,7 @@ export default class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://moveonpomodoro.vercel.app/share-vector.svg"
+            content="https://moveonpomodoro.vercel.app/share-image.png"
           />
           <meta
             property="og:description"
