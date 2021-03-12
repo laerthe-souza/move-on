@@ -57,10 +57,10 @@ export default class MyDocument extends Document {
             property="og:title"
             content="move.on | Tenha maior produtividade e foco nos seus projetos"
           />
-          <meta property="og:type" content="[Web Application]" />
+          <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://i.ibb.co/KzqcskR/Login.jpg"
+            content="https://moveonpomodoro.vercel.app/share-image.png"
           />
           <meta
             property="og:description"
