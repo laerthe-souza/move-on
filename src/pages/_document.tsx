@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
           <meta name="author" content="Laerthe Souza" />
           <meta
             name="description"
-            content="Um aplicativo baseado na Técnica Pomodoro, para aqueles que desejam um aumento na produtividade e maior foco."
+            content="Um aplicativo baseado na Técnica Pomodoro, para aqueles que desejam maior produtividade e foco."
           />
           <meta
             name="keywords"
@@ -66,7 +66,7 @@ export default class MyDocument extends Document {
             property="og:description"
             content="Quer ter maior produtivide e foco? Venha conhecer o move.on."
           />
-          <meta property="og:url" content="https://move-on-henna.vercel.app" />
+          <meta property="og:url" content="https://moveonpomodoro.vercel.app" />
 
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
