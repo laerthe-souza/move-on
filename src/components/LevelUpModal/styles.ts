@@ -71,6 +71,7 @@ export const Overlay = styled.div`
       font-size: 1.8rem;
       font-weight: 600;
       transition: all 0.4s;
+      border-radius: 0 0 5px 5px;
 
       &:hover {
         background-color: ${props =>
