@@ -67,6 +67,14 @@ export default function CountdownProvider({
       setIsActive(false);
       setTime(pauseCountdown);
     } else if (isActive && isPause && time === 0) {
+      new Audio('/notification.mp3').play();
+
+      if (Notification.permission === 'granted') {
+        new Notification('Fim do descanso', {
+          body: 'Hora de voltar ao trabalho 💪. Você completou o desafio?',
+        });
+      }
+
       setIsActive(false);
       setHasFinished(true);
       setIsPause(false);
