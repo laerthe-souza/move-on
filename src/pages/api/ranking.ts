@@ -1,4 +1,4 @@
-import { NowRequest, NowResponse, VercelResponse } from '@vercel/node';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import { MongoClient, Db } from 'mongodb';
 import url from 'url';
 
@@ -24,8 +24,8 @@ async function connectToDatabase(uri: string) {
 }
 
 export default async (
-  request: NowRequest,
-  response: NowResponse,
+  request: VercelRequest,
+  response: VercelResponse,
 ): Promise<VercelResponse> => {
   const db = await connectToDatabase(process.env.MONGODB_URI);
 
