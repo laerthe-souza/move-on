@@ -6,11 +6,11 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   position: absolute;
-  top: 5%;
-  right: 2.2%;
+  right: 0;
   width: 45px;
   height: 15px;
-  background-color: var(--white);
+  background-color: ${props =>
+    props.theme.mode === 'light' ? 'var(--gray-line)' : 'var(--white)'};
   border-radius: 10px;
   display: flex;
   align-items: center;

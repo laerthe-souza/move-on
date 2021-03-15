@@ -11,6 +11,7 @@ import Cookies from 'js-cookie';
 
 import challenges from '../../challenges.json';
 import LevelUpModal from '../components/LevelUpModal';
+import { useSettings } from './useSettings';
 
 interface Challenge {
   type: string;
@@ -45,6 +46,8 @@ export default function ChallengesProvider({
   children,
   ...rest
 }: ChallengesProviderProps): JSX.Element {
+  const { appMode } = useSettings();
+
   const [level, setLevel] = useState(rest.level || 1);
   const [currentExperience, setCurrentExperience] = useState(
     rest.currentExperience || 0,
@@ -89,6 +92,15 @@ export default function ChallengesProvider({
   }, [level]);
 
   const completeChallenge = useCallback(() => {
+    if (
+      appMode === 'test' &&
+      process.env.NEXT_PUBLIC_ENVIRONMENT === 'production'
+    ) {
+      setIsLevelUpModalOpen(true);
+      setActiveChallenge(null);
+      return;
+    }
+
     if (!activeChallenge) {
       return;
     }
@@ -113,6 +125,7 @@ export default function ChallengesProvider({
     totalExperience,
     levelUp,
     challengesCompleted,
+    appMode,
   ]);
 
   useEffect(() => {

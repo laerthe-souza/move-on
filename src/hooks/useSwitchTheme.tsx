@@ -8,7 +8,6 @@ import {
   useState,
 } from 'react';
 import { ThemeProvider } from 'styled-components';
-import SwitchTheme from '../components/SwitchTheme';
 
 interface ThemeProps {
   mode: 'light' | 'dark';
@@ -54,10 +53,7 @@ export default function SwitchThemeProvider({
 
   return (
     <SwitchThemeContext.Provider value={{ theme, toggleSwitch }}>
-      <ThemeProvider theme={theme}>
-        {children}
-        <SwitchTheme />
-      </ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </SwitchThemeContext.Provider>
   );
 }

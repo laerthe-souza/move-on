@@ -2,13 +2,12 @@ import { FiX } from 'react-icons/fi';
 import { MdPlayArrow, MdCheckCircle } from 'react-icons/md';
 import { useChallenges } from '../../hooks/useChallenges';
 import { useCountdown } from '../../hooks/useCountdown';
+import { useSettings } from '../../hooks/useSettings';
 
 import { Container, CountdownButton, Timer } from './styles';
 
 export default function Countdown(): JSX.Element {
   const {
-    countdown,
-    pauseCountdown,
     minutes,
     seconds,
     isActive,
@@ -18,6 +17,7 @@ export default function Countdown(): JSX.Element {
     resetCountdown,
   } = useCountdown();
   const { resetChallenge } = useChallenges();
+  const { countdown, pauseCountdown } = useSettings();
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');

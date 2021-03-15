@@ -17,3 +17,23 @@ export const Content = styled.main`
   gap: 9rem;
   align-content: center;
 `;
+
+export const SettingsButton = styled.button`
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: var(--blue);
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    svg {
+      transform: rotateZ(180deg);
+      size: 50;
+    }
+  }
+`;

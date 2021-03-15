@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { MdSettings } from 'react-icons/md';
 
 import ChallengesBox from '../../components/ChallengesBox';
 import CompletedChallegnes from '../../components/CompletedChallenges';
@@ -11,8 +12,13 @@ import SideBar from '../../components/SideBar';
 import ChallengesProvider from '../../hooks/useChallenges';
 import CountdownProvider from '../../hooks/useCountdown';
 import { useLoading } from '../../hooks/useLoading';
+import { useSettings } from '../../hooks/useSettings';
 
-import { Container, Content } from '../../styles/pages/dashboard';
+import {
+  Container,
+  Content,
+  SettingsButton,
+} from '../../styles/pages/dashboard';
 
 interface UserData {
   name: string;
@@ -30,6 +36,7 @@ interface DashboardProps {
 
 export default function Dashboard({ userdata }: DashboardProps): JSX.Element {
   const { isLoading } = useLoading();
+  const { toggleShowModalSettings } = useSettings();
 
   useEffect(() => {
     Notification.requestPermission();
@@ -72,6 +79,10 @@ export default function Dashboard({ userdata }: DashboardProps): JSX.Element {
               </section>
             </Content>
           </CountdownProvider>
+
+          <SettingsButton onClick={toggleShowModalSettings}>
+            <MdSettings size={35} />
+          </SettingsButton>
         </Container>
       </ChallengesProvider>
     </>

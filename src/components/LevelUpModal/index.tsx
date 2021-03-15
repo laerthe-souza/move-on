@@ -13,7 +13,7 @@ export default function LevelUpModal(): JSX.Element {
  com desafios para a saúde física, melhorando o foco e a produtividade enquanto trabalhamos.`;
 
   return (
-    <Overlay>
+    <Overlay onClick={closeLevelUpModal}>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -22,6 +22,7 @@ export default function LevelUpModal(): JSX.Element {
           stiffness: 260,
           damping: 8,
         }}
+        onClick={event => event.stopPropagation()}
       >
         <button type="button" onClick={closeLevelUpModal}>
           <img src="/icons/close.svg" alt="Fechar modal" />

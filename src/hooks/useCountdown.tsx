@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react';
 import { useChallenges } from './useChallenges';
+import { useSettings } from './useSettings';
 
 interface CountdownContextData {
   countdown: number;
@@ -32,9 +33,10 @@ export default function CountdownProvider({
   children,
 }: CountdownProviderProps): JSX.Element {
   const { startNewChallenge } = useChallenges();
+  const { countdown, pauseCountdown } = useSettings();
 
-  const countdown = Number(process.env.NEXT_PUBLIC_COUNTDOWN);
-  const pauseCountdown = Number(process.env.NEXT_PUBLIC_PAUSE_COUNTDOWN);
+  // Number(process.env.NEXT_PUBLIC_COUNTDOWN)
+  // Number(process.env.NEXT_PUBLIC_PAUSE_COUNTDOWN)
 
   const [time, setTime] = useState(countdown);
   const [isActive, setIsActive] = useState(false);
@@ -80,6 +82,10 @@ export default function CountdownProvider({
       setIsPause(false);
     }
   }, [isActive, time]);
+
+  useEffect(() => {
+    setTime(countdown);
+  }, [countdown]);
 
   return (
     <CountdownContext.Provider
