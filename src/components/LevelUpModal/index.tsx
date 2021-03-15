@@ -17,10 +17,9 @@ export default function LevelUpModal(): JSX.Element {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
         transition={{
-          type: 'spring',
-          stiffness: 260,
-          damping: 8,
+          duration: 0.4,
         }}
         onClick={event => event.stopPropagation()}
       >

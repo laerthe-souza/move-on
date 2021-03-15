@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import {
   createContext,
   ReactNode,
@@ -56,7 +57,7 @@ export default function SettingsProvider({
       }}
     >
       {children}
-      <Settings isShow={showSettings} />
+      <AnimatePresence>{showSettings && <Settings />}</AnimatePresence>
     </SettingsContext.Provider>
   );
 }
