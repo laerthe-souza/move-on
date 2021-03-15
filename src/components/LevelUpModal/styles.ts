@@ -15,7 +15,7 @@ export const Overlay = styled.div`
   align-items: center;
   justify-content: center;
 
-  div {
+  > div {
     background-color: ${props =>
       props.theme.mode === 'light' ? 'var(--white)' : '#111'};
     width: 100%;

@@ -38,7 +38,9 @@ export default async (
   const db = await connectToDatabase(process.env.MONGODB_URI);
 
   const collection = db.collection(
-    process.env.ENVIRONMENT === 'development' ? 'users_dev' : 'users',
+    process.env.NEXT_PUBLIC_ENVIRONMENT === 'development'
+      ? 'users_dev'
+      : 'users',
   );
 
   await collection.updateOne(
