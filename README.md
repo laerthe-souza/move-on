@@ -16,7 +16,7 @@
 
 <hr />
 
-# View the app
+## View the app
 
 <details>
   <summary>🌞 Light mode</summary>
