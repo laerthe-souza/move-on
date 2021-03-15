@@ -7,7 +7,7 @@ import Profile from '../../components/Profile';
 import SideBar from '../../components/SideBar';
 import { useLoading } from '../../hooks/useLoading';
 
-import { Container, Ranking } from '../../styles/pages/leaderboard';
+import { Container, Content, Ranking } from '../../styles/pages/leaderboard';
 
 interface UserData {
   name: string;
@@ -38,38 +38,40 @@ export default function Leaderboard({ users }: LeaderboardProps): JSX.Element {
       <Container>
         <SideBar page="leaderboard" />
 
-        <header>Leaderboard</header>
+        <Content>
+          <header>Leaderboard</header>
 
-        <Ranking>
-          <thead>
-            <tr>
-              <th>POSIÇÃO</th>
-              <th>USUÁRIO</th>
-              <th>DESAFIOS</th>
-              <th>EXPERIÊNCIA</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={user.username}>
-                <td>{index + 1}</td>
-                <td>
-                  <Profile
-                    name={user.name || user.username}
-                    avatarUrl={user.avatarUrl}
-                    level={user.level}
-                  />
-                </td>
-                <td>
-                  <strong>{user.challengesCompleted}</strong> completados
-                </td>
-                <td>
-                  <strong>{user.totalExperience}</strong> xp
-                </td>
+          <Ranking>
+            <thead>
+              <tr>
+                <th>POSIÇÃO</th>
+                <th>USUÁRIO</th>
+                <th>DESAFIOS</th>
+                <th>EXPERIÊNCIA</th>
               </tr>
-            ))}
-          </tbody>
-        </Ranking>
+            </thead>
+            <tbody>
+              {users.map((user, index) => (
+                <tr key={user.username}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <Profile
+                      name={user.name || user.username}
+                      avatarUrl={user.avatarUrl}
+                      level={user.level}
+                    />
+                  </td>
+                  <td>
+                    <strong>{user.challengesCompleted}</strong> completados
+                  </td>
+                  <td>
+                    <strong>{user.totalExperience}</strong> xp
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Ranking>
+        </Content>
       </Container>
     </>
   );

@@ -5,10 +5,10 @@ interface ContainerProps {
 }
 
 export const Container = styled.aside<ContainerProps>`
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   background-color: var(--white);
   box-shadow: ${props =>
     props.theme.mode === 'light' && '0 0 60px rgba(0, 0, 0, 0.2)'};

@@ -59,24 +59,26 @@ export default function Dashboard({ userdata }: DashboardProps): JSX.Element {
         <Container>
           <SideBar page="dashboard" />
 
-          <ExperienceBar />
-
           <CountdownProvider>
             <Content>
-              <section>
-                <Profile
-                  name={userdata.name || userdata.username}
-                  avatarUrl={userdata.avatarUrl}
-                />
+              <ExperienceBar />
 
-                <CompletedChallegnes />
+              <main>
+                <section>
+                  <Profile
+                    name={userdata.name || userdata.username}
+                    avatarUrl={userdata.avatarUrl}
+                  />
 
-                <Countdown />
-              </section>
+                  <CompletedChallegnes />
 
-              <section>
-                <ChallengesBox />
-              </section>
+                  <Countdown />
+                </section>
+
+                <section>
+                  <ChallengesBox />
+                </section>
+              </main>
             </Content>
           </CountdownProvider>
 
