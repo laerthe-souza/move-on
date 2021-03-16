@@ -16,7 +16,7 @@ export const Content = styled.main`
   justify-content: center;
   padding: 3.5rem 0;
 
-  main {
+  > main {
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
