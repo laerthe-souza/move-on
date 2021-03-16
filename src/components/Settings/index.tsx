@@ -6,7 +6,7 @@ import SwitchTheme from '../SwitchTheme';
 import { Overlay, SettingsModal } from './styles';
 
 export default function Settings(): JSX.Element {
-  const { toggleShowModalSettings, appMode, saveChanges } = useSettings();
+  const { closeModalSettings, appMode, saveChanges } = useSettings();
 
   const [selectValue, setSelectValue] = useState(appMode);
 
@@ -15,7 +15,7 @@ export default function Settings(): JSX.Element {
   }, [saveChanges, selectValue]);
 
   return (
-    <Overlay onClick={toggleShowModalSettings}>
+    <Overlay onClick={closeModalSettings}>
       <SettingsModal
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -48,7 +48,7 @@ export default function Settings(): JSX.Element {
           <button
             className="closeButton"
             type="button"
-            onClick={toggleShowModalSettings}
+            onClick={closeModalSettings}
           >
             Fechar
           </button>

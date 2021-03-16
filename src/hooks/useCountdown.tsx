@@ -35,9 +35,6 @@ export default function CountdownProvider({
   const { startNewChallenge } = useChallenges();
   const { countdown, pauseCountdown } = useSettings();
 
-  // Number(process.env.NEXT_PUBLIC_COUNTDOWN)
-  // Number(process.env.NEXT_PUBLIC_PAUSE_COUNTDOWN)
-
   const [time, setTime] = useState(countdown);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);

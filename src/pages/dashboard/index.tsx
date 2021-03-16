@@ -36,7 +36,7 @@ interface DashboardProps {
 
 export default function Dashboard({ userdata }: DashboardProps): JSX.Element {
   const { isLoading } = useLoading();
-  const { toggleShowModalSettings } = useSettings();
+  const { showModalSettings } = useSettings();
 
   useEffect(() => {
     Notification.requestPermission();
@@ -82,7 +82,7 @@ export default function Dashboard({ userdata }: DashboardProps): JSX.Element {
             </Content>
           </CountdownProvider>
 
-          <SettingsButton onClick={toggleShowModalSettings}>
+          <SettingsButton onClick={showModalSettings}>
             <MdSettings size={35} />
           </SettingsButton>
         </Container>

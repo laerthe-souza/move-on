@@ -13,7 +13,8 @@ interface SettingsContextData {
   appMode: string;
   countdown: number;
   pauseCountdown: number;
-  toggleShowModalSettings(): void;
+  showModalSettings(): void;
+  closeModalSettings(): void;
   saveChanges(appModeValue: string): void;
 }
 
@@ -32,9 +33,13 @@ export default function SettingsProvider({
   const [countdown, setCountdown] = useState(1500);
   const [pauseCountdown, setPauseCountdown] = useState(300);
 
-  const toggleShowModalSettings = useCallback(() => {
-    setShowSettings(!showSettings);
-  }, [showSettings]);
+  const showModalSettings = useCallback(() => {
+    setShowSettings(true);
+  }, []);
+
+  const closeModalSettings = useCallback(() => {
+    setShowSettings(false);
+  }, []);
 
   const saveChanges = useCallback((appModeValue: string) => {
     setAppMode(appModeValue);
@@ -52,7 +57,8 @@ export default function SettingsProvider({
         appMode,
         countdown,
         pauseCountdown,
-        toggleShowModalSettings,
+        showModalSettings,
+        closeModalSettings,
         saveChanges,
       }}
     >
